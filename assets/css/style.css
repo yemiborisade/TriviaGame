@@ -1,0 +1,28 @@
+.container {
+    margin: 80px 10px 10px 100px;
+    height: 1000px;
+    width: 500px;
+    background-color: red;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+h3 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.row {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
