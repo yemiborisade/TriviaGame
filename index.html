@@ -8,47 +8,32 @@
 
 
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Home for the Holiday's Trivia Game</h1>
-        <h2>Clock: </h2>
-        <h3>Please answer as many right questions as you can in the alotted time</h3>
-        <br>
-        <br>
-        <div class="row">
-                <div class="col-md-12"><h4>Who stole Christmas?</h4></div>
-        </div>
-            <div class="row">
-            <div class="col-md-3"><button type="button" class="btn btn-outline-dark">The Grinch</button></div>
-            <div class="col-md-3"><button type="button" class="btn btn-outline-dark">Elf</button></div>
-            <div class="col-md-3"><button type="button" class="btn btn-outline-dark">Scrooge</button></div>
-            <div class="col-md-3"><button type="button" class="btn btn-outline-dark">Ralphie</button></div>
-        </div>
-        <br>
-        <div class="row">
-                <div class="col-md-12"><h4>What was the fragile gift received in a Christmas Story Movie?</h4></div>
-        </div>
-            <div class="row">
-            <div class="col-md-3"><button type="button" class="btn btn-outline-dark">Red Rider BB Gub</button></div>
-            <div class="col-md-3"><button type="button" class="btn btn-outline-dark">Meatloaf</button></div>
-            <div class="col-md-3"><button type="button" class="btn btn-outline-dark">Leg Lamp</button></div>
-            <div class="col-md-3"><button type="button" class="btn btn-outline-dark">Ovaltine</button></div>
-        </div>
-        <br>
-        <div class="row">
-                <div class="col-md-12"><h4>How many robbers tried to break into Kevin's house in Home Alone?</h4></div>
-        </div>
-            <div class="row">
-            <div class="col-md-3"><button type="button" class="btn btn-outline-dark">Six</button></div>
-            <div class="col-md-3"><button type="button" class="btn btn-outline-dark">Two</button></div>
-            <div class="col-md-3"><button type="button" class="btn btn-outline-dark">Three</button></div>
-            <div class="col-md-3"><button type="button" class="btn btn-outline-dark">One</button></div>
-        </div>
-          
-        
-    </div>
+        <div id="container">
+          <div id="start">Start Quiz!</div>
+          <div id="quiz" style="display: none">
+              <div id="question"></div>
+              <div id="qImg"></div>
+              <div id="choices">
+                  <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                  <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                  <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+                  <div class="choice" id="D" onclick="checkAnswer('D')"></div>
+              </div>
+              <div id="timer">
+                  <div id="counter"></div>
+                  <div id="btimeGauge"></div>
+                  <div id="timeGauge"></div>
+              </div>
+              <div id="progress"></div>
+          </div>
+          <div id="scoreContainer" style="display: none"></div>
+      </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="./assets/javascript/app.js"></script>
 </body>
 </html>
