@@ -1,3 +1,4 @@
+// select all elements
 const start = document.getElementById("start");
 const quiz = document.getElementById("quiz");
 const question = document.getElementById("question");
@@ -5,143 +6,106 @@ const qImg = document.getElementById("qImg");
 const choiceA = document.getElementById("A");
 const choiceB = document.getElementById("B");
 const choiceC = document.getElementById("C");
-const choiceD = document.getElementById("D");
 const counter = document.getElementById("counter");
 const timeGauge = document.getElementById("timeGauge");
 const progress = document.getElementById("progress");
 const scoreDiv = document.getElementById("scoreContainer");
 
-
-var myQuestions = [
-	{
-		question: "Name the actor who starred as Michael Knight in the “Knight Rider”?",
-		imgSrc : "/Users/caseykelleher/UCF/TriviaGame/assets/images/knightrider.jpeg",
-		answers: {
-			choiceA: 'David Hasselhoff',
-			choiceB: 'Richard Dean Anderson',
-            choiceC: 'Tom Selleck',
-            choiceD: 'Don Johnson'
-		},
-		correctAnswer: 'A'
-	},
-	{
-		question: "Which actress was never nude in the series “Sex And The City”?",
-		imgSrc : "/Users/caseykelleher/UCF/TriviaGame/assets/images/sexandthecity.jpeg",
-		answers: {
-			choiceA: 'Kristin Davis',
-			choiceB: 'Cynthia Nixon',
-            choiceC: 'Sarah Jessica Parker',
-            choiceD: 'Kim Cattrall'
-		},
-		correctAnswer: 'C'
-    },
+// create our questions
+let questions = [
     {
-		question: "How many people Jack Bauer killed in 192 hours?",
-		imgSrc : "/Users/caseykelleher/UCF/TriviaGame/assets/images/jackbauer.jpeg",
-		answers: {
-			choiceA: '125',
-			choiceB: '267',
-            choiceC: '275',
-            choiceD: '309'
-		},
-		correctAnswer: 'B'
-    },
-    {
-		question: "In the TV series 'Lost', what is the name of the group that conducted scientific experiments on the island?",
-		imgSrc : "/Users/caseykelleher/UCF/TriviaGame/assets/images/lost.jpeg",
-		answers: {
-			choiceA: 'Dharma Initiative',
-			choiceB: 'Oceanic Six',
-            choiceC: 'Ajira',
-            choiceD: 'The Others'
-		},
-		correctAnswer: 'A'
-    },
-    {
-		question: "What is Doug Heffernan's profession on the TV sitcom 'The King of Queens'?",
-		imgSrc : "/Users/caseykelleher/UCF/TriviaGame/assets/images/kingofqueens.jpeg",
-		answers: {
-			choiceA: 'Delivery Driver',
-			choiceB: 'Electrician',
-            choiceC: 'Plumber',
-            choiceD: 'Mailman'
-		},
-		correctAnswer: 'A'
-    },
-    {
-		question: "Which of the following animated sitcoms was created by Seth MacFarlane?",
-		imgSrc : "/Users/caseykelleher/UCF/TriviaGame/assets/images/seth.jpeg",
-		answers: {
-			choiceA: 'The Simpsons',
-			choiceB: 'American Dad',
-            choiceC: 'Futurama',
-            choiceD: 'South Park'
-		},
-		correctAnswer: 'B'
-    },
-    {
-		question: "Airing from 1994 to 2000, in which city was the medical drama TV show ER set?",
-		imgSrc : "/Users/caseykelleher/UCF/TriviaGame/assets/images/ER.jpeg",
-		answers: {
-			choiceA: 'Dallas',
-			choiceB: 'St. Louis',
-            choiceC: 'Chicago',
-            choiceD: 'Denver'
-		},
-		correctAnswer: 'C'
-    },
-    {
-		question: "Who plays Nancy Botwin on the comedy-drama TV show 'Weeds'?",
-		imgSrc : "/Users/caseykelleher/UCF/TriviaGame/assets/images/weeds.jpeg",
-		answers: {
-			choiceA: 'Tonye Patano',
-			choiceB: 'Allie Grant',
-            choiceC: 'Elizabeth Perkins',
-            choiceD: 'Mary-Louis Parker'
-		},
-		correctAnswer: 'D'
-    },
-    {
-		question: "Which character owned the bar on the popular American sitcom 'Cheers'?",
-		imgSrc : "/Users/caseykelleher/UCF/TriviaGame/assets/images/cheers.jpeg",
-		answers: {
-			choiceA: 'Sam Malone',
-			choiceB: 'Woody Boyd',
-			choiceC: 'Frasier Crane',
-            choiceD: 'Cliff Clavin'
-		},
-		correctAnswer: 'A'
-    },
-    {
-		question: "What was the name of the hangout on the show 'Saved by the Bell'?",
-		imgSrc : "/Users/caseykelleher/UCF/TriviaGame/assets/images/savedbythebell.jpeg",
-		answers: {
-			choiceA: 'The Malibu Latch Club',
-			choiceB: 'The Malibu Warf',
-            choiceC: 'The Pier',
-            choiceD: 'Malibu Sands Beach Club'
-		},
-		correctAnswer: 'D'
-	}
+        question : "What is Batman's mother's name?",
+        imgSrc : "https://i.pinimg.com/originals/73/e4/65/73e4657ecf2798d76fb811ba3ab4b707.jpg",
+        choiceA : "Martha",
+        choiceB : "Susan",
+        choiceC : "Jill",
+        correct : "A"
+    },{
+        question : "Who is Batman's greatest enemy?",
+        imgSrc : "https://upload.wikimedia.org/wikipedia/en/f/ff/BATMANROUGUESUNDERGROUND.png",
+        choiceA : "Scarecrow",
+        choiceB : "The Joker",
+        choiceC : "Penguin Cobblepot",
+        correct : "B"
+    },{
+        question : "This Robin would be known as Batman's first son and would later lead the Teen Titans",
+        imgSrc : "https://static.comicvine.com/uploads/original/11128/111283887/5944764-3255864761-37894.jpg",
+        choiceA : "Jason Todd",
+        choiceB : "Damian Wayne",
+        choiceC : "Dick Grayson",
+        correct : "C"
+    },{
+        question : "Joker's nickname is which of the following?",
+        imgSrc : "https://www.bing.com/th?id=OIP.ZQClyk_jXeuK1mOFKq4CGAHaF7&pid=Api&rs=1",
+        choiceA : "One Bad Day",
+        choiceB : "Agent of Chaos",
+        choiceC : "The Clown Prince",
+        correct : "C"
+    },{
+        question : "Scarecrow uses what to attack people?",
+        imgSrc : "https://static2.comicvine.com/uploads/scale_medium/10/100647/4733671-11737831_10153068336789007_2528858156749556392_n2.jpg",
+        choiceA : "Fear Gas",
+        choiceB : "Chains",
+        choiceC : "Poison",
+        correct : "A"
+    },{
+        question : "Bane broke which of Batman's body parts?",
+        imgSrc : "http://www.fightersgeneration.com/nx5/injustice/bane-vs-batman.jpg",
+        choiceA : "Legs",
+        choiceB : "Back",
+        choiceC : "Neck",
+        correct : "B"
+    },{
+        question : "Who is the leader of the Gotham Sirens?",
+        imgSrc : "https://d1466nnw0ex81e.cloudfront.net/n_iv/600/2851952.jpg",
+        choiceA : "Catwoman",
+        choiceB : "Harley Quinn",
+        choiceC : "Poison Ivy",
+        correct : "A"
+    },{
+        question : "Harley Quinn notoriously uses what weapon of choice?",
+        imgSrc : "https://i.pinimg.com/736x/d6/98/ed/d698ed8f217807b93335b87a3ca2c1b2--vertigo-justice-league.jpg",
+        choiceA : "Twin Pistols",
+        choiceB : "Attack Dogs",
+        choiceC : "Baseball Bat",
+        correct : "C"
+    },{
+        question : "This helpful friend equips Batman with all of his gadgets",
+        imgSrc : "http://www.gunaxin.com/wp-content/uploads/2016/03/IMG_1913.jpg",
+        choiceA : "Lucius Fox",
+        choiceB : "Jim Gordon",
+        choiceC : "Alfred Pennyworth",
+        correct : "A"
+    },{
+        question : "Who is behind the mask of the iconic Batgirl",
+        imgSrc : "https://wtfdccomics.files.wordpress.com/2012/08/batgirl-new-52-1.jpg",
+        choiceA : "Betty Kane",
+        choiceB : "Selina Kyle",
+        choiceC : "Barbara Gordon",
+        correct : "C"
+    }
 ];
 
-var lastQuestion = question.length - 1;
-var runningQuestion = 0;
-var count = 0;
-var questionTime = 10; // 10s
-var gaugeWidth = 150; // 150px
-var gaugeUnit = gaugeWidth / questionTime;
-var TIMER;
-var score = 0;
+// create some variables
 
+const lastQuestion = questions.length - 1;
+let runningQuestion = 0;
+let count = 0;
+const questionTime = 10; // 10s
+const gaugeWidth = 150; // 150px
+const gaugeUnit = gaugeWidth / questionTime;
+let TIMER;
+let score = 0;
+
+// render a question
 function renderQuestion(){
-    let q = question[runningQuestion];
+    let q = questions[runningQuestion];
     
-    question.innerHTML = "<p>"+ question +"</p>";
-    // qImg.innerHTML = "<img src="+ imgSrc +">";
-    choiceA.innerHTML = choiceA;
-    choiceB.innerHTML = choiceB;
-    choiceC.innerHTML = choiceC;
+    question.innerHTML = "<p>"+ q.question +"</p>";
+    qImg.innerHTML = "<img src="+ q.imgSrc +">";
+    choiceA.innerHTML = q.choiceA;
+    choiceB.innerHTML = q.choiceB;
+    choiceC.innerHTML = q.choiceC;
 }
 
 start.addEventListener("click",startQuiz);
@@ -188,7 +152,7 @@ function renderCounter(){
 // checkAnwer
 
 function checkAnswer(answer){
-    if( answer == question[runningQuestion].correct){
+    if( answer == questions[runningQuestion].correct){
         // answer is correct
         score++;
         // change progress color to green
@@ -227,11 +191,11 @@ function scoreRender(){
     const scorePerCent = Math.round(100 * score/questions.length);
     
     // choose the image based on the scorePerCent
-    let img = (scorePerCent >= 80) ? "img/5.png" :
-              (scorePerCent >= 60) ? "img/4.png" :
-              (scorePerCent >= 40) ? "img/3.png" :
-              (scorePerCent >= 20) ? "img/2.png" :
-              "img/1.png";
+    let img = (scorePerCent >= 80) ? "https://cdn.vox-cdn.com/thumbor/pAOIY3gvUyx3j97J7gnQnGTWVoc=/0x0:1920x1080/1200x800/filters:focal(725x485:1031x791)/cdn.vox-cdn.com/uploads/chorus_image/image/53153749/legobatmancover.0.jpg" :
+              (scorePerCent >= 60) ? "http://ep.yimg.com/ay/stylinonline/batman-joker-vintage-laugh-t-shirt-7.jpg" :
+              (scorePerCent >= 40) ? "http://cdn.trendhunterstatic.com/thumbs/sad-batman.jpeg" :
+              (scorePerCent >= 20) ? "http://cdn.trendhunterstatic.com/thumbs/sad-batman.jpeg" :
+              "https://cdn.drawception.com/images/panels/2013/9-6/xCbY67E2cT-10.png";
     
     scoreDiv.innerHTML = "<img src="+ img +">";
     scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";
