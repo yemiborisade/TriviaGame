@@ -71,7 +71,7 @@ let questions = [
         correct : "C"
     },{
         question : "This helpful friend equips Batman with all of his gadgets",
-        imgSrc : "http://www.gunaxin.com/wp-content/uploads/2016/03/IMG_1913.jpg",
+        imgSrc : "https://www.bing.com/th?id=OIP.MH0PKOHPo0xAamTYsErANAHaFv&pid=Api&rs=1",
         choiceA : "Lucius Fox",
         choiceB : "Jim Gordon",
         choiceC : "Alfred Pennyworth",

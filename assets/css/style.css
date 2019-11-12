@@ -4,6 +4,13 @@ body {
     background-image: ("http://wallpapercave.com/wp/6cbPLRK.jpg");
 }
 
+.backer-photo {
+   position: absolute;
+   top: -50px;
+   height: 200%;
+   width: 100%;
+}
+
 #container{
     margin : 70px auto;
     background-color: lightgray;
@@ -26,6 +33,7 @@ body {
     left:210px;
     top:160px;
     color : yellow;
+    font-family: 'Bangers', cursive;
 }
 #start:hover{
     border: 6px solid blue;
@@ -56,6 +64,7 @@ body {
     margin : 0;
     padding : 15px;
     font-size: 1.25em;
+    font-family: 'Bangers', cursive;
 }
 
 #choices{
@@ -63,7 +72,8 @@ body {
     position: absolute;
     right : 0;
     top : 125px;
-    padding : 10px
+    padding : 10px;
+    font-family: 'Bangers', cursive;
 }
 .choice{
     display: inline-block;
@@ -73,9 +83,10 @@ body {
     border-radius: 5px;
     cursor: pointer;
     padding : 5px;
+    font-family: 'Bangers', cursive;
 }
 .choice:hover{
-    border : 2px solid grey;
+    border : 6px solid grey;
     font-weight: bold;
 }
 
